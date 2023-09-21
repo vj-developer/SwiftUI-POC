@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pokeman : Identifiable, Equatable, Decodable{
+struct Pokeman : Identifiable, Equatable, Decodable, Encodable {
     var id : String
     var name : String
     var hp : String
@@ -15,7 +15,7 @@ struct Pokeman : Identifiable, Equatable, Decodable{
     var images : Images
 }
 
-struct Images : Equatable, Decodable{
+struct Images : Equatable, Decodable, Encodable {
     var small : String
     var large : String
 }

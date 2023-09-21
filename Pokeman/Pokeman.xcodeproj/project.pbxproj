@@ -17,13 +17,17 @@
 		ED340C7D2ABAF5FF00932004 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED340C7C2ABAF5FF00932004 /* Localization.swift */; };
 		ED340C842ABAFAA600932004 /* PokemanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED340C832ABAFAA600932004 /* PokemanCard.swift */; };
 		ED9075F72ABC0C6E008689CD /* PokemanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9075F62ABC0C6E008689CD /* PokemanResponse.swift */; };
+		ED9076002ABC4655008689CD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = ED9075FF2ABC4655008689CD /* ComposableArchitecture */; };
+		ED9076022ABC5293008689CD /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9076012ABC5293008689CD /* Provider.swift */; };
+		ED9076042ABC52FA008689CD /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9076032ABC52FA008689CD /* ProviderError.swift */; };
+		ED9076062ABC5322008689CD /* Error+Equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9076052ABC5322008689CD /* Error+Equality.swift */; };
+		ED9076082ABC53C4008689CD /* Provider+Pokeman.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9076072ABC53C4008689CD /* Provider+Pokeman.swift */; };
 		EDE1CDD62ABAFF23005625E9 /* Pokeman.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDD52ABAFF23005625E9 /* Pokeman.swift */; };
 		EDE1CDD82ABB0944005625E9 /* PokemanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDD72ABB0944005625E9 /* PokemanList.swift */; };
 		EDE1CDDA2ABB0F3C005625E9 /* Localization+PokemanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDD92ABB0F3C005625E9 /* Localization+PokemanList.swift */; };
 		EDE1CDDF2ABB1537005625E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1CDDD2ABB1537005625E9 /* Localizable.strings */; };
 		EDE1CDE32ABB15F5005625E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1CDE12ABB15F5005625E9 /* Localizable.strings */; };
 		EDE1CDE52ABB169C005625E9 /* PokemanReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDE42ABB169C005625E9 /* PokemanReducer.swift */; };
-		EDE1CDE82ABB25EB005625E9 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EDE1CDE72ABB25EB005625E9 /* ComposableArchitecture */; };
 		EDE1CDEA2ABB2974005625E9 /* PokemanClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDE92ABB2974005625E9 /* PokemanClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,10 @@
 		ED340C7C2ABAF5FF00932004 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		ED340C832ABAFAA600932004 /* PokemanCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanCard.swift; sourceTree = "<group>"; };
 		ED9075F62ABC0C6E008689CD /* PokemanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanResponse.swift; sourceTree = "<group>"; };
+		ED9076012ABC5293008689CD /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		ED9076032ABC52FA008689CD /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
+		ED9076052ABC5322008689CD /* Error+Equality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Equality.swift"; sourceTree = "<group>"; };
+		ED9076072ABC53C4008689CD /* Provider+Pokeman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+Pokeman.swift"; sourceTree = "<group>"; };
 		EDE1CDD52ABAFF23005625E9 /* Pokeman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokeman.swift; sourceTree = "<group>"; };
 		EDE1CDD72ABB0944005625E9 /* PokemanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanList.swift; sourceTree = "<group>"; };
 		EDE1CDD92ABB0F3C005625E9 /* Localization+PokemanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+PokemanList.swift"; sourceTree = "<group>"; };
@@ -73,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE1CDE82ABB25EB005625E9 /* ComposableArchitecture in Frameworks */,
+				ED9076002ABC4655008689CD /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,11 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				ED340C742ABAF3EB00932004 /* Localization */,
-				ED340C752ABAF43C00932004 /* Utility */,
 				ED340C792ABAF4D900932004 /* Data */,
 				ED340C782ABAF4CF00932004 /* Design System */,
 				ED340C772ABAF4C600932004 /* Application */,
 				ED340C762ABAF4BB00932004 /* Resources */,
+				ED340C752ABAF43C00932004 /* Utility */,
 				ED340C492ABAED3300932004 /* PokemanApp.swift */,
 				ED340C4B2ABAED3300932004 /* ContentView.swift */,
 				ED340C4D2ABAED3400932004 /* Assets.xcassets */,
@@ -169,6 +177,7 @@
 		ED340C752ABAF43C00932004 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				ED9076052ABC5322008689CD /* Error+Equality.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -184,7 +193,7 @@
 		ED340C772ABAF4C600932004 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				ED340C7E2ABAF9EE00932004 /* Cards */,
+				ED340C7E2ABAF9EE00932004 /* Pokeman */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -223,19 +232,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		ED340C7E2ABAF9EE00932004 /* Cards */ = {
+		ED340C7E2ABAF9EE00932004 /* Pokeman */ = {
 			isa = PBXGroup;
 			children = (
 				ED340C832ABAFAA600932004 /* PokemanCard.swift */,
 				EDE1CDD72ABB0944005625E9 /* PokemanList.swift */,
 				EDE1CDE42ABB169C005625E9 /* PokemanReducer.swift */,
 			);
-			path = Cards;
+			path = Pokeman;
 			sourceTree = "<group>";
 		};
 		ED9075F52ABC0B49008689CD /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				ED9076012ABC5293008689CD /* Provider.swift */,
+				ED9076032ABC52FA008689CD /* ProviderError.swift */,
+				ED9076072ABC53C4008689CD /* Provider+Pokeman.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -282,7 +294,7 @@
 			);
 			name = Pokeman;
 			packageProductDependencies = (
-				EDE1CDE72ABB25EB005625E9 /* ComposableArchitecture */,
+				ED9075FF2ABC4655008689CD /* ComposableArchitecture */,
 			);
 			productName = Pokeman;
 			productReference = ED340C462ABAED3300932004 /* Pokeman.app */;
@@ -358,7 +370,7 @@
 			);
 			mainGroup = ED340C3D2ABAED3300932004;
 			packageReferences = (
-				EDE1CDE62ABB25EB005625E9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				ED9075FE2ABC4655008689CD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = ED340C472ABAED3300932004 /* Products */;
 			projectDirPath = "";
@@ -404,16 +416,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9076082ABC53C4008689CD /* Provider+Pokeman.swift in Sources */,
 				ED9075F72ABC0C6E008689CD /* PokemanResponse.swift in Sources */,
 				EDE1CDEA2ABB2974005625E9 /* PokemanClient.swift in Sources */,
 				ED340C4C2ABAED3300932004 /* ContentView.swift in Sources */,
+				ED9076042ABC52FA008689CD /* ProviderError.swift in Sources */,
 				EDE1CDD82ABB0944005625E9 /* PokemanList.swift in Sources */,
 				EDE1CDDA2ABB0F3C005625E9 /* Localization+PokemanList.swift in Sources */,
 				ED340C842ABAFAA600932004 /* PokemanCard.swift in Sources */,
 				EDE1CDE52ABB169C005625E9 /* PokemanReducer.swift in Sources */,
+				ED9076022ABC5293008689CD /* Provider.swift in Sources */,
 				ED340C4A2ABAED3300932004 /* PokemanApp.swift in Sources */,
 				EDE1CDD62ABAFF23005625E9 /* Pokeman.swift in Sources */,
 				ED340C7D2ABAF5FF00932004 /* Localization.swift in Sources */,
+				ED9076062ABC5322008689CD /* Error+Equality.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,20 +800,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EDE1CDE62ABB25EB005625E9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		ED9075FE2ABC4655008689CD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				kind = exactVersion;
+				version = 0.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDE1CDE72ABB25EB005625E9 /* ComposableArchitecture */ = {
+		ED9075FF2ABC4655008689CD /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EDE1CDE62ABB25EB005625E9 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = ED9075FE2ABC4655008689CD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

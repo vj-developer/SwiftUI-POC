@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemanResponse : Decodable, Equatable {
+struct PokemanResponse : Equatable, Decodable, Encodable {
     var data : [Pokeman]
     var page : Int
     var count : Int

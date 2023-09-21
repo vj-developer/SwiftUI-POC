@@ -16,7 +16,7 @@ struct PokemanCard: View {
         VStack() {
             
             AsyncImage(url: URL(string: pokeman.images.small)!) { phase in
-                      if let image = phase.image { // 2
+                      if let image = phase.image {
                           // if the image is valid
                           image
                               .resizable()
@@ -24,9 +24,9 @@ struct PokemanCard: View {
                               .aspectRatio(contentMode: .fill)
                               .clipped()
                               
-                      } else if phase.error != nil { // 3
+                      } else if phase.error != nil {
                           // some kind of error appears
-                          Text("No image available \(phase.error!.localizedDescription)")
+                          Text("No image available")
                       } else {
                           //appears as placeholder image
                           ProgressView()
@@ -44,7 +44,7 @@ struct PokemanCard: View {
             
         }
         .frame(maxWidth: .infinity,maxHeight: 400)
-        //.border(.blue,width:1)
+
     }
 }
 

@@ -9,28 +9,29 @@ import Foundation
 import ComposableArchitecture
 
 struct PokemanClient {
-    var fetchPokemanList: () async throws -> PokemanResponse
+    //var fetchPokemanList: () async throws -> PokemanResponse
+    var fetchPokemanList: () -> Effect<PokemanResponse, ProviderError>
 }
 
-extension PokemanClient : DependencyKey {
-    static let liveValue = Self (
+extension PokemanClient {
+    static let liveValue = Self(
         fetchPokemanList : {
-            let url = URL(string: "https://api.pokemontcg.io/v2/cards?pageSize=15")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            
-            
-            let (data, _) = try await URLSession.shared.data(for: request)
-            let decoder = JSONDecoder()
-            let response = try decoder.decode(PokemanResponse.self, from: data)
-            return response
+            Provider.shared
+                .getPokemanList()
+                .eraseToEffect()
         }
     )
 }
 
-extension DependencyValues {
-    var getPokemanList: PokemanClient {
-        get { self[PokemanClient.self] }
-        set { self[PokemanClient.self] = newValue }
-    }
+// MARK: Mock
+extension PokemanClient {
+    static func mock(
+        all: @escaping () -> Effect<PokemanResponse, ProviderError> = {
+          fatalError("Unmocked")
+        }
+      ) -> Self {
+        Self(
+            fetchPokemanList: all
+        )
+      }
 }

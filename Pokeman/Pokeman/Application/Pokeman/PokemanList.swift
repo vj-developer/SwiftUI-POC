@@ -17,11 +17,11 @@ struct PokemanList: View {
         .mockPokeman4
     ]
     
-    let store : StoreOf<PokemanReducer>
+    let store : Store<PokemanState,PokemanAction>
     
     var body: some View {
         
-        WithViewStore(self.store, observe: {$0}) { viewStore in
+        WithViewStore(self.store) { viewStore in
             
             VStack(alignment: .leading){
                 
@@ -65,8 +65,11 @@ struct PokemanList_Previews: PreviewProvider {
     static var previews: some View {
         PokemanList(
             store: Store(
-                initialState: PokemanReducer.PokemanState(),
-                reducer: { PokemanReducer() }
+                initialState: PokemanState(),
+                reducer: pokemanReducer,
+                environment: PokemanEnvironment(
+                    pokemanClient: .mock(),
+                    mainQueue:DispatchQueue.main.eraseToAnyScheduler())
             )
         )
     }

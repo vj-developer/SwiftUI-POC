@@ -12,8 +12,11 @@ struct ContentView: View {
     var body: some View {
         PokemanList(
             store: Store(
-                initialState: PokemanReducer.PokemanState(),
-                reducer: { PokemanReducer() }
+                initialState: PokemanState(),
+                reducer: pokemanReducer,
+                environment: PokemanEnvironment(
+                    pokemanClient: .mock(),
+                    mainQueue:DispatchQueue.main.eraseToAnyScheduler())
             )
         )
     }
