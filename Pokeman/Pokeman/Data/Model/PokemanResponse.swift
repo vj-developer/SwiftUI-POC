@@ -13,3 +13,19 @@ struct PokemanResponse : Equatable, Decodable, Encodable {
     var count : Int
     var totalCount : Int
 }
+
+//MARK: Mock
+extension PokemanResponse {
+    static var mock: PokemanResponse = .init(
+        data: [
+            .mockPokeman1,
+            .mockPokeman2,
+            .mockPokeman3,
+            .mockPokeman4
+        ],
+        page: 1,
+        count: 2,
+        totalCount: 4
+    )
+}
+

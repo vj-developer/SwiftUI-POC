@@ -15,7 +15,7 @@ struct ContentView: View {
                 initialState: PokemanState(),
                 reducer: pokemanReducer,
                 environment: PokemanEnvironment(
-                    pokemanClient: .mock(),
+                    pokemanClient: .mockPreview(),
                     mainQueue:DispatchQueue.main.eraseToAnyScheduler())
             )
         )

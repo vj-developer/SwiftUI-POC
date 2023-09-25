@@ -9,7 +9,6 @@ import Foundation
 import ComposableArchitecture
 
 struct PokemanClient {
-    //var fetchPokemanList: () async throws -> PokemanResponse
     var fetchPokemanList: () -> Effect<PokemanResponse, ProviderError>
 }
 
@@ -23,15 +22,30 @@ extension PokemanClient {
     )
 }
 
-// MARK: Mock
+// MARK: - Mock Implementation
+
 extension PokemanClient {
+    
     static func mock(
-        all: @escaping () -> Effect<PokemanResponse, ProviderError> = {
+        fetchPokemanList: @escaping () -> Effect<PokemanResponse, ProviderError> = {
           fatalError("Unmocked")
         }
       ) -> Self {
         Self(
-            fetchPokemanList: all
+            fetchPokemanList: fetchPokemanList
         )
       }
+    
+    static func mockPreview(
+        fetchPokemanList: @escaping () -> Effect<PokemanResponse, ProviderError> = {
+            // Provide a mock implementation that returns a mock response
+            .init(value: PokemanResponse.mock)
+        }
+    ) -> Self {
+        Self(
+            fetchPokemanList: fetchPokemanList
+        )
+    }
 }
+
+

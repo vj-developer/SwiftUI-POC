@@ -17,8 +17,8 @@ struct PokemanState : Equatable {
 // MARK: Pokeman Action
 enum PokemanAction : Equatable {
     case onAppear
-    case onPokemanResponse(PokemanResponse)
-
+    case onPokemanResponse(Result<PokemanResponse, ProviderError>)
+    
     case onPokemanTapped
 }
 
@@ -29,15 +29,28 @@ struct PokemanEnvironment {
 }
 
 let pokemanReducer = Reducer<PokemanState,PokemanAction,PokemanEnvironment> { state, action, environment in
+    struct PokemanCancelId: Hashable {}
+    
     switch action{
-        
     case .onAppear:
         state.isLoading = true
-        return .none
+        return environment.pokemanClient
+            .fetchPokemanList()
+            .receive(on: environment.mainQueue)
+            .catchToEffect()
+            .map(PokemanAction.onPokemanResponse)
+            .cancellable(id: PokemanCancelId())
+            
         
-    case let .onPokemanResponse(pokemanResponse):
+    case .onPokemanResponse(.success(let pokemanResponse)):
+        print("success\(pokemanResponse)")
         state.isLoading = false
         state.pokemanList = pokemanResponse.data
+        return .none
+        
+    case .onPokemanResponse(.failure(let error)):
+        print("error\(error.localizedDescription)")
+        state.isLoading = false
         return .none
         
     case .onPokemanTapped:

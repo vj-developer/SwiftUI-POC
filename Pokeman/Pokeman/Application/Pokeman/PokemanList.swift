@@ -67,10 +67,8 @@ struct PokemanList_Previews: PreviewProvider {
             store: Store(
                 initialState: PokemanState(),
                 reducer: pokemanReducer,
-                environment: PokemanEnvironment(
-                    pokemanClient: .mock(),
-                    mainQueue:DispatchQueue.main.eraseToAnyScheduler())
-            )
+                environment: .init(pokemanClient: .mockPreview(), mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                                  ))
         )
     }
 }
