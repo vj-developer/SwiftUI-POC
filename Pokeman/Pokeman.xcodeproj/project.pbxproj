@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E55D6CE2AC41B1600A202DB /* FuturesPOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E55D6CD2AC41B1600A202DB /* FuturesPOC.swift */; };
+		2E55D6D02AC4364900A202DB /* FuturesPocViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E55D6CF2AC4364900A202DB /* FuturesPocViewModel.swift */; };
 		2EB6FA8A2AC152A90009EC6E /* Provider+Pokeman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6FA892AC152A90009EC6E /* Provider+Pokeman.swift */; };
 		ED340C4A2ABAED3300932004 /* PokemanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED340C492ABAED3300932004 /* PokemanApp.swift */; };
 		ED340C4C2ABAED3300932004 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED340C4B2ABAED3300932004 /* ContentView.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E55D6CD2AC41B1600A202DB /* FuturesPOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesPOC.swift; sourceTree = "<group>"; };
+		2E55D6CF2AC4364900A202DB /* FuturesPocViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturesPocViewModel.swift; sourceTree = "<group>"; };
 		2EB6FA892AC152A90009EC6E /* Provider+Pokeman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+Pokeman.swift"; sourceTree = "<group>"; };
 		ED340C462ABAED3300932004 /* Pokeman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokeman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED340C492ABAED3300932004 /* PokemanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanApp.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E55D6CC2AC40FEE00A202DB /* POC */ = {
+			isa = PBXGroup;
+			children = (
+				2E55D6CD2AC41B1600A202DB /* FuturesPOC.swift */,
+				2E55D6CF2AC4364900A202DB /* FuturesPocViewModel.swift */,
+			);
+			path = POC;
+			sourceTree = "<group>";
+		};
 		ED340C3D2ABAED3300932004 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		ED340C482ABAED3300932004 /* Pokeman */ = {
 			isa = PBXGroup;
 			children = (
+				2E55D6CC2AC40FEE00A202DB /* POC */,
 				ED340C742ABAF3EB00932004 /* Localization */,
 				ED340C792ABAF4D900932004 /* Data */,
 				ED340C782ABAF4CF00932004 /* Design System */,
@@ -416,8 +430,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E55D6D02AC4364900A202DB /* FuturesPocViewModel.swift in Sources */,
 				2EB6FA8A2AC152A90009EC6E /* Provider+Pokeman.swift in Sources */,
 				ED9075F72ABC0C6E008689CD /* PokemanResponse.swift in Sources */,
+				2E55D6CE2AC41B1600A202DB /* FuturesPOC.swift in Sources */,
 				EDE1CDEA2ABB2974005625E9 /* PokemanClient.swift in Sources */,
 				ED340C4C2ABAED3300932004 /* ContentView.swift in Sources */,
 				ED9076042ABC52FA008689CD /* ProviderError.swift in Sources */,

@@ -10,15 +10,17 @@ import ComposableArchitecture
 
 struct ContentView: View {
     var body: some View {
-        PokemanList(
-            store: Store(
-                initialState: PokemanState(),
-                reducer: pokemanReducer,
-                environment: PokemanEnvironment(
-                    pokemanClient: .mockPreview(),
-                    mainQueue:DispatchQueue.main.eraseToAnyScheduler())
-            )
-        )
+//        PokemanList(
+//            store: Store(
+//                initialState: PokemanState(),
+//                reducer: pokemanReducer,
+//                environment: PokemanEnvironment(
+//                    pokemanClient: .mockPreview(),
+//                    mainQueue:DispatchQueue.main.eraseToAnyScheduler())
+//            )
+//        )
+        
+        FuturesPOC()
     }
 }
 
