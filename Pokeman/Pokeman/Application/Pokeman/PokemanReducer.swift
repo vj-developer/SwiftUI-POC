@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct PokemanState : Equatable {
     var pokemanList : [Pokeman] = []
     var isLoading = true
+    var title: String = ""
 }
 
 // MARK: Pokeman Action
@@ -22,6 +23,7 @@ enum PokemanAction : Equatable {
     case onPokemanTapped
 }
 
+// MARK: Pokeman Environment
 struct PokemanEnvironment {
     // Future dependencies
     var pokemanClient: PokemanClient
@@ -44,6 +46,7 @@ let pokemanReducer = Reducer<PokemanState,PokemanAction,PokemanEnvironment> { st
         
     case .onPokemanResponse(.success(let pokemanResponse)):
         print("success\(pokemanResponse)")
+        state.title = pokemanResponse.count.description
         state.isLoading = false
         state.pokemanList = pokemanResponse.data
         return .none

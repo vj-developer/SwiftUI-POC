@@ -24,7 +24,7 @@ extension PokemanResponse {
             .mockPokeman4
         ],
         page: 1,
-        count: 2,
+        count: 1,
         totalCount: 4
     )
 }

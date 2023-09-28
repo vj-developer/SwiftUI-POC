@@ -22,8 +22,7 @@ extension PokemanClient {
     )
 }
 
-// MARK: - Mock Implementation
-
+// MARK: - Mock 
 extension PokemanClient {
     
     static func mock(

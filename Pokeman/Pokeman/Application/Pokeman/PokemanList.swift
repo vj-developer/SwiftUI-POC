@@ -28,9 +28,8 @@ struct PokemanList: View {
                 Text(Localization.PokemanList.title)
                     .padding()
                 
-                
                 PokemanGrid(pokemanList: viewStore.pokemanList)
-
+                
             }
             .frame(maxWidth: .infinity)
             .onAppear{ viewStore.send(.onAppear) }
