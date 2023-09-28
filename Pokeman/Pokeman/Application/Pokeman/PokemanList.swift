@@ -10,13 +10,6 @@ import ComposableArchitecture
 
 struct PokemanList: View {
     
-    var pokemanList : [Pokeman] = [
-        .mockPokeman1,
-        .mockPokeman2,
-        .mockPokeman3,
-        .mockPokeman4
-    ]
-    
     let store : Store<PokemanState,PokemanAction>
     
     var body: some View {

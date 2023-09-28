@@ -12,14 +12,12 @@ import ComposableArchitecture
 struct PokemanState : Equatable {
     var pokemanList : [Pokeman] = []
     var isLoading = true
-    var title: String = ""
 }
 
 // MARK: Pokeman Action
 enum PokemanAction : Equatable {
     case onAppear
     case onPokemanResponse(Result<PokemanResponse, ProviderError>)
-    
     case onPokemanTapped
 }
 
@@ -30,6 +28,7 @@ struct PokemanEnvironment {
     var mainQueue: AnySchedulerOf<DispatchQueue>
 }
 
+// MARK: Pokeman Reducer
 let pokemanReducer = Reducer<PokemanState,PokemanAction,PokemanEnvironment> { state, action, environment in
     struct PokemanCancelId: Hashable {}
     
@@ -45,14 +44,13 @@ let pokemanReducer = Reducer<PokemanState,PokemanAction,PokemanEnvironment> { st
             
         
     case .onPokemanResponse(.success(let pokemanResponse)):
-        print("success\(pokemanResponse)")
-        state.title = pokemanResponse.count.description
+        print("success \(pokemanResponse)")
         state.isLoading = false
         state.pokemanList = pokemanResponse.data
         return .none
         
     case .onPokemanResponse(.failure(let error)):
-        print("error\(error.localizedDescription)")
+        print("error \(error.localizedDescription)")
         state.isLoading = false
         return .none
         
