@@ -15,7 +15,6 @@ struct PokemanList: View {
     var body: some View {
         
         WithViewStore(self.store) { viewStore in
-            
             VStack(alignment: .leading){
                 
                 Text(Localization.PokemanList.title)
@@ -60,7 +59,8 @@ struct PokemanList_Previews: PreviewProvider {
                 initialState: PokemanState(),
                 reducer: pokemanReducer,
                 environment: .init(pokemanClient: .mockPreview(), mainQueue: DispatchQueue.main.eraseToAnyScheduler()
-                                  ))
+                )
+            )
         )
     }
 }

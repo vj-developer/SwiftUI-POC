@@ -29,8 +29,11 @@
 		EDE1CDDA2ABB0F3C005625E9 /* Localization+PokemanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDD92ABB0F3C005625E9 /* Localization+PokemanList.swift */; };
 		EDE1CDDF2ABB1537005625E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1CDDD2ABB1537005625E9 /* Localizable.strings */; };
 		EDE1CDE32ABB15F5005625E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDE1CDE12ABB15F5005625E9 /* Localizable.strings */; };
-		EDE1CDE52ABB169C005625E9 /* PokemanReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDE42ABB169C005625E9 /* PokemanReducer.swift */; };
+		EDE1CDE52ABB169C005625E9 /* PokemanCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDE42ABB169C005625E9 /* PokemanCore.swift */; };
 		EDE1CDEA2ABB2974005625E9 /* PokemanClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1CDE92ABB2974005625E9 /* PokemanClient.swift */; };
+		EDF05DB32AC57B05001245F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF05DB22AC57B05001245F9 /* HomeView.swift */; };
+		EDF05DB52AC57BBC001245F9 /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF05DB42AC57BBC001245F9 /* HomeCore.swift */; };
+		EDF05DB82AC57E8A001245F9 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF05DB72AC57E8A001245F9 /* FavouritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +79,11 @@
 		EDE1CDD92ABB0F3C005625E9 /* Localization+PokemanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+PokemanList.swift"; sourceTree = "<group>"; };
 		EDE1CDDE2ABB1537005625E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		EDE1CDE22ABB15F5005625E9 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = Localizable.strings; sourceTree = "<group>"; };
-		EDE1CDE42ABB169C005625E9 /* PokemanReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanReducer.swift; sourceTree = "<group>"; };
+		EDE1CDE42ABB169C005625E9 /* PokemanCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanCore.swift; sourceTree = "<group>"; };
 		EDE1CDE92ABB2974005625E9 /* PokemanClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemanClient.swift; sourceTree = "<group>"; };
+		EDF05DB22AC57B05001245F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EDF05DB42AC57BBC001245F9 /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
+		EDF05DB72AC57E8A001245F9 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,8 @@
 		ED340C772ABAF4C600932004 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				EDF05DB62AC57E72001245F9 /* Favourites */,
+				EDF05DB12AC57ADD001245F9 /* Home */,
 				ED340C7E2ABAF9EE00932004 /* Pokeman */,
 			);
 			path = Application;
@@ -251,7 +259,7 @@
 			children = (
 				ED340C832ABAFAA600932004 /* PokemanCard.swift */,
 				EDE1CDD72ABB0944005625E9 /* PokemanList.swift */,
-				EDE1CDE42ABB169C005625E9 /* PokemanReducer.swift */,
+				EDE1CDE42ABB169C005625E9 /* PokemanCore.swift */,
 			);
 			path = Pokeman;
 			sourceTree = "<group>";
@@ -289,6 +297,23 @@
 				EDE1CDE12ABB15F5005625E9 /* Localizable.strings */,
 			);
 			path = "pt-PT.lproj";
+			sourceTree = "<group>";
+		};
+		EDF05DB12AC57ADD001245F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDF05DB22AC57B05001245F9 /* HomeView.swift */,
+				EDF05DB42AC57BBC001245F9 /* HomeCore.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF05DB62AC57E72001245F9 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				EDF05DB72AC57E8A001245F9 /* FavouritesView.swift */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +457,7 @@
 			files = (
 				2E55D6D02AC4364900A202DB /* FuturesPocViewModel.swift in Sources */,
 				2EB6FA8A2AC152A90009EC6E /* Provider+Pokeman.swift in Sources */,
+				EDF05DB32AC57B05001245F9 /* HomeView.swift in Sources */,
 				ED9075F72ABC0C6E008689CD /* PokemanResponse.swift in Sources */,
 				2E55D6CE2AC41B1600A202DB /* FuturesPOC.swift in Sources */,
 				EDE1CDEA2ABB2974005625E9 /* PokemanClient.swift in Sources */,
@@ -440,10 +466,12 @@
 				EDE1CDD82ABB0944005625E9 /* PokemanList.swift in Sources */,
 				EDE1CDDA2ABB0F3C005625E9 /* Localization+PokemanList.swift in Sources */,
 				ED340C842ABAFAA600932004 /* PokemanCard.swift in Sources */,
-				EDE1CDE52ABB169C005625E9 /* PokemanReducer.swift in Sources */,
+				EDE1CDE52ABB169C005625E9 /* PokemanCore.swift in Sources */,
 				ED9076022ABC5293008689CD /* Provider.swift in Sources */,
+				EDF05DB52AC57BBC001245F9 /* HomeCore.swift in Sources */,
 				ED340C4A2ABAED3300932004 /* PokemanApp.swift in Sources */,
 				EDE1CDD62ABAFF23005625E9 /* Pokeman.swift in Sources */,
+				EDF05DB82AC57E8A001245F9 /* FavouritesView.swift in Sources */,
 				ED340C7D2ABAF5FF00932004 /* Localization.swift in Sources */,
 				ED9076062ABC5322008689CD /* Error+Equality.swift in Sources */,
 			);

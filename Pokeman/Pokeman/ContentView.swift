@@ -11,17 +11,15 @@ import ComposableArchitecture
 struct ContentView: View {
     var body: some View {
         
-        PokemanList(
+        HomeView(
             store: Store(
-                initialState: PokemanState(),
-                reducer: pokemanReducer,
-                environment: PokemanEnvironment(
+                initialState: HomeState(),
+                reducer: homeReducer,
+                environment: HomeEnvironment(
                     pokemanClient: .liveValue,
                     mainQueue:DispatchQueue.main.eraseToAnyScheduler())
             )
         )
-        
-        //FuturesPOC()
     }
 }
 
