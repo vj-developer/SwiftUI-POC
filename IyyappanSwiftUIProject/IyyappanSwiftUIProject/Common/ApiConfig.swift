@@ -10,5 +10,4 @@ import Foundation
 public class WebConstants {
     static let BaseURL = "https://reqres.in/api/"
     static let Login = "login"
-    
 }

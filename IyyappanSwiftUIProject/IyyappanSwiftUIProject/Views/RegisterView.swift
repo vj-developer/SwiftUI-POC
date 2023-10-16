@@ -9,16 +9,22 @@ import SwiftUI
 
 struct RegisterView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var fullName = ""
     @State var email = ""
     @State var mobile = ""
     @State var password = ""
     @State var confirmPassword = ""
     
+    @State var showAlert = false
+    @State var errorMessage = ""
     
     var body: some View {
         ScrollView {
             VStack{
+                
+                // TopView
                 Image(Images.LOGIN_BG)
                     .resizable()
                     .frame(
@@ -37,14 +43,14 @@ struct RegisterView: View {
                 TextFieldWithIcon(
                     text: $fullName,
                     hint: Labels.ENTER_YOUR_FULL_NAME,
-                    icon: "person"
+                    icon: Images.PERSON
                 )
                 
                 // Email Field
                 TextFieldWithIcon(
                     text: $email,
                     hint: Labels.ENTER_YOUR_EMAIL,
-                    icon: "envelope",
+                    icon: Images.ENVELOPE,
                     keyboardType: .emailAddress
                 )
 
@@ -52,7 +58,7 @@ struct RegisterView: View {
                 TextFieldWithIcon(
                     text: $mobile,
                     hint: Labels.ENTER_YOUR_MOBILE_NUMBER,
-                    icon: "phone",
+                    icon: Images.PHONE,
                     keyboardType: .phonePad
                 )
                 
@@ -60,29 +66,31 @@ struct RegisterView: View {
                 TextFieldWithIcon(
                     text: $password,
                     hint: Labels.PASSWORD,
-                    icon: "lock"
+                    icon: Images.LOCK
                 )
                 
                 // Confirm Password Field
                 TextFieldWithIcon(
                     text: $confirmPassword,
                     hint: Labels.CONFIRM_PASSWORD,
-                    icon: "lock"
+                    icon: Images.LOCK
                 )
                 
                 
-                
+                // Submit
                 Button {
-                    
+                    if(isValid()){
+                        
+                    }
                 } label: {
-                    CustomButton(title: "Next")
+                    CustomButton(title: "Submit")
                 }
                 
                 // Already a Member
                 HStack{
                     Text(Labels.ALREADY_A_MEMBER)
                     Button {
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text(Labels.LOGIN)
                             .foregroundColor(COLORS.PRIMARY)
@@ -93,7 +101,57 @@ struct RegisterView: View {
                 
             }
         }
+        .onTapGesture {
+            self.endEditing()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(Titles.Alert),message: Text(errorMessage))
+        }
         //.navigationBarBackButtonHidden()
+    }
+    
+    func isValid() -> Bool {
+        if(fullName.isEmpty){
+            errorMessage = Messages.EmptyFullNameError
+            showAlert.toggle()
+            return false
+        }
+        if(email.isEmpty){
+            errorMessage = Messages.EmptyEmailError
+            showAlert.toggle()
+            return false
+        }
+        if(!email.isValidEmail()){
+            errorMessage = Messages.InvalidEmailError
+            showAlert.toggle()
+            return false
+        }
+        if(mobile.isEmpty){
+            errorMessage = Messages.EmptyMobileError
+            showAlert.toggle()
+            return false
+        }
+        if(!mobile.isValidMobileNumber()){
+            errorMessage = Messages.InvalidMobileError
+            showAlert.toggle()
+            return false
+        }
+        if(password.isEmpty){
+            errorMessage = Messages.EmptyPasswordError
+            showAlert.toggle()
+            return false
+        }
+        if(password.count < 8){
+            errorMessage = Messages.InvalidPasswordError
+            showAlert.toggle()
+            return false
+        }
+        if(!Validator().isEqualString(str1: password, str2: confirmPassword)){
+            errorMessage = Messages.PasswordMatchError
+            showAlert.toggle()
+            return false
+        }
+        return true
     }
 }
 

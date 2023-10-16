@@ -11,6 +11,10 @@ import SwiftUI
 public class Images {
     static let LOGIN_BG = "LoginBg"
     static let SPLASH_LOGO = "Splash_logo"
+    static let ENVELOPE = "envelope"
+    static let PERSON = "person"
+    static let PHONE = "phone"
+    static let LOCK = "lock"
 }
 
 public class Dimens {

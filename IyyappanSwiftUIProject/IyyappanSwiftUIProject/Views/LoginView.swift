@@ -20,10 +20,15 @@ struct LoginView: View {
     
     @State var isLoggedIn = false
     
+    @ObservedObject var network = NetworkMonitor()
+    private var api = RequestService()
+    
     var body: some View {
         
         ScrollView {
             VStack{
+                
+                // TopView
                 Image(Images.LOGIN_BG)
                     .resizable()
                     .frame(width:Dimens.mediumImageWidth,height:Dimens.mediumImageHeight)
@@ -40,7 +45,7 @@ struct LoginView: View {
                 TextFieldWithIcon(
                     text: $email,
                     hint: Labels.ENTER_YOUR_EMAIL,
-                    icon: "envelope",
+                    icon: Images.ENVELOPE,
                     keyboardType: .emailAddress
                 )
                 
@@ -62,7 +67,8 @@ struct LoginView: View {
                 // Next
                 Button {
                     if (isValid()){
-                        isLoggedIn = true
+                        //isLoggedIn = true
+                        doLogin()
                     }
                 } label: {
                     CustomButton(title: Labels.Next)
@@ -90,6 +96,9 @@ struct LoginView: View {
                 Spacer()
                 
             }
+            .onTapGesture {
+                self.endEditing()
+            }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(Titles.Alert),message: Text(errorMessage))
             }
@@ -98,17 +107,17 @@ struct LoginView: View {
     
     func isValid() -> Bool {
         if(email.isEmpty){
-            errorMessage = "Email Cannot be Empty"
+            errorMessage = Messages.EmptyEmailError
             showAlert.toggle()
             return false
         }
-        if(!isValidEmailAddr(strToValidate: email)){
+        if(!email.isValidEmail()){
             errorMessage = Messages.InvalidEmailError
             showAlert.toggle()
             return false
         }
         if(password.isEmpty){
-            errorMessage = "Password Cannot be Empty"
+            errorMessage = Messages.EmptyPasswordError
             showAlert.toggle()
             return false
         }
@@ -117,7 +126,26 @@ struct LoginView: View {
             showAlert.toggle()
             return false
         }
+        if(!network.isConnected){
+            errorMessage = Messages.NetworkConnectionError
+            showAlert.toggle()
+            return false
+        }
         return true
+    }
+    
+    func doLogin() {
+        // Define the request body as a dictionary
+        let requestBody: [String: String] = [
+            "email": "eve.holt@reqres.in",
+            "password": "cityslicka"
+        ]
+        
+        api.loginPost(parameters: requestBody) { (data, response, err) in
+            if let data = data {
+                print(data.token)
+            }
+        }
     }
 }
 

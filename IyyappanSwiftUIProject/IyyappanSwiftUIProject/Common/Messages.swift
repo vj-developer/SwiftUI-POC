@@ -14,8 +14,17 @@ public class Titles {
 
 public class Messages {
     static let NetworkErrorMEssage = "No Internet! Please check your Internet Connection"
+    static let EmptyFieldError = " Cannot be Empty"
+    static let EmptyEmailError = "Email Cannot be Empty"
+    static let EmptyMobileError = "Mobile Number Cannot be Empty"
+    static let EmptyError = "Email Cannot be Empty"
+    static let EmptyFullNameError = "Full Name Cannot be Empty"
+    static let EmptyPasswordError = "Password Cannot be Empty"
     static let InvalidEmailError = "Please Enter a Valid Email"
     static let InvalidPasswordError = "Password must contain Minimum 8 Characters"
+    static let PasswordMatchError = "Password does not match"
+    static let InvalidMobileError = "Mobile Number must contain 10 digits"
+    static let NetworkConnectionError = "No Internet Connection"
 }
 
 public class Labels {
