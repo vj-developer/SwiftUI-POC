@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage(AppKeys.Token) var isLoggedIn: Bool = false
     @State var isTimeOut = false
     
     var body: some View {
@@ -17,7 +18,11 @@ struct ContentView: View {
             
             ZStack{
                 if isTimeOut {
-                    LoginView()
+                    if isLoggedIn {
+                        BottomTabView()
+                    }else {
+                        LoginView()
+                    }
                 }else {
                     SplashView()
                 }

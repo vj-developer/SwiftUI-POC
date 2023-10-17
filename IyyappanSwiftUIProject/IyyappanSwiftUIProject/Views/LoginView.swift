@@ -18,28 +18,20 @@ struct LoginView: View {
     @State var showAlert = false
     @State var errorMessage = ""
     
-    @State var isLoggedIn = false
+    @State var isLoading = false
     
     @ObservedObject var network = NetworkMonitor()
     private var api = RequestService()
     
+    @AppStorage(AppKeys.Token) var isLoggedIn: Bool = false
+    
     var body: some View {
         
         ScrollView {
-            VStack{
+            VStack {
                 
                 // TopView
-                Image(Images.LOGIN_BG)
-                    .resizable()
-                    .frame(width:Dimens.mediumImageWidth,height:Dimens.mediumImageHeight)
-                
-                Text(Labels.WELCOME_BACK)
-                    .font(.title)
-                    .padding(.top,-140)
-                
-                Text(Labels.SIGNIN_IN_TO_ACCESS_YOUR_ACCOUNT)
-                    .font(.subheadline)
-                    .padding(.top,-110)
+                TopView()
                 
                 // Email Field
                 TextFieldWithIcon(
@@ -52,7 +44,7 @@ struct LoginView: View {
                 // Password Field
                 PasswordTextField(text: $password, isSecure: $isSecured)
                 
-                //Forgot password
+                // Forgot password
                 HStack{
                     Spacer()
                     Button {
@@ -67,7 +59,6 @@ struct LoginView: View {
                 // Next
                 Button {
                     if (isValid()){
-                        //isLoggedIn = true
                         doLogin()
                     }
                 } label: {
@@ -83,9 +74,14 @@ struct LoginView: View {
                         Text(Labels.REGISTER)
                             .foregroundColor(COLORS.PRIMARY)
                     }
-
+                    
                 }
                 
+                if(isLoading){
+                    ProgressView()
+                        .tint(COLORS.PRIMARY)
+                        .foregroundColor(COLORS.PRIMARY)
+                }
                 
                 NavigationLink(
                     destination: RegisterView(),
@@ -93,15 +89,13 @@ struct LoginView: View {
                         EmptyView()
                     }
                 
-                Spacer()
-                
             }
-            .onTapGesture {
-                self.endEditing()
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text(Titles.Alert),message: Text(errorMessage))
-            }
+        }
+        .onTapGesture {
+            self.endEditing()
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(Titles.Alert),message: Text(errorMessage))
         }
     }
     
@@ -135,6 +129,7 @@ struct LoginView: View {
     }
     
     func doLogin() {
+        isLoading = true
         // Define the request body as a dictionary
         let requestBody: [String: String] = [
             "email": "eve.holt@reqres.in",
@@ -142,9 +137,29 @@ struct LoginView: View {
         ]
         
         api.loginPost(parameters: requestBody) { (data, response, err) in
+            isLoading = false
             if let data = data {
                 print(data.token)
+                isLoggedIn = true
             }
+        }
+    }
+}
+
+struct TopView: View {
+    var body: some View {
+        VStack{
+            Image(Images.LOGIN_BG)
+                .resizable()
+                .frame(width:Dimens.mediumImageWidth,height:Dimens.mediumImageHeight)
+            
+            Text(Labels.WELCOME_BACK)
+                .font(.title)
+                .padding(.top,-140)
+            
+            Text(Labels.SIGNIN_IN_TO_ACCESS_YOUR_ACCOUNT)
+                .font(.subheadline)
+                .padding(.top,-110)
         }
     }
 }
@@ -154,3 +169,5 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+

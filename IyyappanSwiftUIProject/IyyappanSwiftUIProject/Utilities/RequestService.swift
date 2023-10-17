@@ -40,6 +40,30 @@ class RequestService {
         
     }
     
+    func getRequest <T: Codable>(
+        endpoint: String,
+        completion: @escaping(T?, URLResponse?, Error?) -> Void
+    ) {
+        guard let url = URL(string : WebConstants.BaseURL + endpoint) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 20
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                completion(nil, response, error)
+                return
+            }
+            completion(try? self.newJSONDecoder().decode(T.self, from: data), response, nil)
+            
+        }.resume()
+        
+    }
+    
     func newJSONDecoder() -> JSONDecoder {
         let decoder = JSONDecoder()
         if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
@@ -59,6 +83,16 @@ class RequestService {
     // Login
     func loginPost(parameters:[String : Any], completion: @escaping (LoginResponse?, URLResponse?, Error?) -> Void) -> Void {
         httpRequest(endpoint: WebConstants.Login, parameters: parameters, completion: completion)
+    }
+    
+    // Get UsersList
+    func getUsersList(completion: @escaping (UserListResponse?, URLResponse?, Error?) -> Void) -> Void {
+        getRequest(endpoint: "\(WebConstants.UsersList)?page=2", completion: completion)
+    }
+    
+    // Get UsersDetails
+    func getUserDetails(userId: Int, completion: @escaping (UserDetailsResponse?, URLResponse?, Error?) -> Void) -> Void {
+        getRequest(endpoint: "\(WebConstants.UsersList)/\(userId)", completion: completion)
     }
     
 }

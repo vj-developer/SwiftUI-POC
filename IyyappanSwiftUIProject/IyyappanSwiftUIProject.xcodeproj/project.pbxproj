@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EA5362C2ADE9D0700EDDE6C /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5362B2ADE9D0700EDDE6C /* UserDetailsView.swift */; };
+		2EA5362E2ADEA1AE00EDDE6C /* UserDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5362D2ADEA1AE00EDDE6C /* UserDetailsResponse.swift */; };
+		2EE4DFC72ADE586100BD7E6F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFC62ADE586100BD7E6F /* LoadingView.swift */; };
+		2EE4DFC92ADE678F00BD7E6F /* TravelGuidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFC82ADE678F00BD7E6F /* TravelGuidesView.swift */; };
+		2EE4DFCB2ADE681400BD7E6F /* UserListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFCA2ADE681400BD7E6F /* UserListResponse.swift */; };
+		2EE4DFCD2ADE6B9100BD7E6F /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFCC2ADE6B9100BD7E6F /* UserCardView.swift */; };
+		2EE4DFCF2ADE723300BD7E6F /* BottomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFCE2ADE723300BD7E6F /* BottomTabView.swift */; };
+		2EE4DFD12ADE740700BD7E6F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFD02ADE740700BD7E6F /* HomeView.swift */; };
+		2EE4DFD32ADE746300BD7E6F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFD22ADE746300BD7E6F /* ProfileView.swift */; };
+		2EE4DFD52ADE84DE00BD7E6F /* UserDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4DFD42ADE84DE00BD7E6F /* UserDataLoader.swift */; };
 		ED3531992AD52A4A00465A31 /* IyyappanSwiftUIProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3531982AD52A4A00465A31 /* IyyappanSwiftUIProjectApp.swift */; };
 		ED35319B2AD52A4A00465A31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35319A2AD52A4A00465A31 /* ContentView.swift */; };
 		ED35319D2AD52A4B00465A31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED35319C2AD52A4B00465A31 /* Assets.xcassets */; };
@@ -53,6 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EA5362B2ADE9D0700EDDE6C /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		2EA5362D2ADEA1AE00EDDE6C /* UserDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsResponse.swift; sourceTree = "<group>"; };
+		2EE4DFC62ADE586100BD7E6F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		2EE4DFC82ADE678F00BD7E6F /* TravelGuidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelGuidesView.swift; sourceTree = "<group>"; };
+		2EE4DFCA2ADE681400BD7E6F /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
+		2EE4DFCC2ADE6B9100BD7E6F /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
+		2EE4DFCE2ADE723300BD7E6F /* BottomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabView.swift; sourceTree = "<group>"; };
+		2EE4DFD02ADE740700BD7E6F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2EE4DFD22ADE746300BD7E6F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2EE4DFD42ADE84DE00BD7E6F /* UserDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDataLoader.swift; path = IyyappanSwiftUIProject/Views/UserDataLoader.swift; sourceTree = SOURCE_ROOT; };
 		ED3531952AD52A4A00465A31 /* IyyappanSwiftUIProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IyyappanSwiftUIProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3531982AD52A4A00465A31 /* IyyappanSwiftUIProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IyyappanSwiftUIProjectApp.swift; sourceTree = "<group>"; };
 		ED35319A2AD52A4A00465A31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +208,11 @@
 				ED3531D52AD545AA00465A31 /* RegisterView.swift */,
 				ED3531D72AD54C8E00465A31 /* SplashView.swift */,
 				ED4063B82ADCFC8100619F40 /* ThreadingView.swift */,
+				2EE4DFC82ADE678F00BD7E6F /* TravelGuidesView.swift */,
+				2EE4DFCE2ADE723300BD7E6F /* BottomTabView.swift */,
+				2EE4DFD02ADE740700BD7E6F /* HomeView.swift */,
+				2EE4DFD22ADE746300BD7E6F /* ProfileView.swift */,
+				2EA5362B2ADE9D0700EDDE6C /* UserDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +251,7 @@
 		ED3531C72AD52BD900465A31 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2EE4DFD42ADE84DE00BD7E6F /* UserDataLoader.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -236,6 +262,8 @@
 				ED3531CF2AD5401500465A31 /* PasswordTextField.swift */,
 				ED3531D12AD5415000465A31 /* TextFieldWithIcon.swift */,
 				ED3531D32AD544E200465A31 /* CustomButton.swift */,
+				2EE4DFC62ADE586100BD7E6F /* LoadingView.swift */,
+				2EE4DFCC2ADE6B9100BD7E6F /* UserCardView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -244,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				ED4063C52ADD56AE00619F40 /* LoginResponse.swift */,
+				2EE4DFCA2ADE681400BD7E6F /* UserListResponse.swift */,
+				2EA5362D2ADEA1AE00EDDE6C /* UserDetailsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -380,24 +410,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4063BB2ADD13DB00619F40 /* ImageLoader.swift in Sources */,
+				2EE4DFD32ADE746300BD7E6F /* ProfileView.swift in Sources */,
 				ED3531D02AD5401500465A31 /* PasswordTextField.swift in Sources */,
 				ED3531DE2AD5673D00465A31 /* Messages.swift in Sources */,
+				2EE4DFCF2ADE723300BD7E6F /* BottomTabView.swift in Sources */,
 				ED35319B2AD52A4A00465A31 /* ContentView.swift in Sources */,
 				ED4063BF2ADD2F7900619F40 /* StringExtension.swift in Sources */,
+				2EE4DFC92ADE678F00BD7E6F /* TravelGuidesView.swift in Sources */,
 				ED3531992AD52A4A00465A31 /* IyyappanSwiftUIProjectApp.swift in Sources */,
 				ED4063C62ADD56AE00619F40 /* LoginResponse.swift in Sources */,
 				ED3531CC2AD52DF000465A31 /* LoginView.swift in Sources */,
+				2EE4DFCD2ADE6B9100BD7E6F /* UserCardView.swift in Sources */,
+				2EE4DFC72ADE586100BD7E6F /* LoadingView.swift in Sources */,
+				2EA5362C2ADE9D0700EDDE6C /* UserDetailsView.swift in Sources */,
 				ED4063C32ADD3FC800619F40 /* NetworkMonitor.swift in Sources */,
 				ED3531D42AD544E200465A31 /* CustomButton.swift in Sources */,
 				ED4063BD2ADD2E6400619F40 /* Validator.swift in Sources */,
+				2EE4DFD12ADE740700BD7E6F /* HomeView.swift in Sources */,
 				ED3531D62AD545AA00465A31 /* RegisterView.swift in Sources */,
 				ED3531D22AD5415000465A31 /* TextFieldWithIcon.swift in Sources */,
 				ED4063C82ADD5A5400619F40 /* RequestService.swift in Sources */,
 				ED3531CE2AD5357F00465A31 /* Constants.swift in Sources */,
 				ED3531DC2AD565D100465A31 /* ApiConfig.swift in Sources */,
 				ED3531D82AD54C8E00465A31 /* SplashView.swift in Sources */,
+				2EE4DFD52ADE84DE00BD7E6F /* UserDataLoader.swift in Sources */,
 				ED4063C12ADD3DA400619F40 /* ViewExtension.swift in Sources */,
+				2EA5362E2ADEA1AE00EDDE6C /* UserDetailsResponse.swift in Sources */,
 				ED3531DA2AD564F400465A31 /* MyFunctions.swift in Sources */,
+				2EE4DFCB2ADE681400BD7E6F /* UserListResponse.swift in Sources */,
 				ED4063B92ADCFC8100619F40 /* ThreadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

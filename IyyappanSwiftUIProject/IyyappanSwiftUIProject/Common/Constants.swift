@@ -15,6 +15,7 @@ public class Images {
     static let PERSON = "person"
     static let PHONE = "phone"
     static let LOCK = "lock"
+    static let WELCOME_BG = "WelcomeBg"
 }
 
 public class Dimens {
