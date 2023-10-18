@@ -46,4 +46,5 @@ public class Labels {
     static let Travel_Guides = "Travel Guides"
     static let Logout = "Logout"
     static let Submit = "Submit"
+    static let Edit_Profile = "Edit Profile"
 }

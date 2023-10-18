@@ -21,6 +21,7 @@ Extensions -> Contains class/struct Extensions
 CustomControls -> Custom Reusable UI Components
 Common -> Common things about the App like Constants, Storage
 Utilities -> Implementation of Custom Utilities like Network check, Availability Check
+Networking -> Implementation of API CLient
 
 Open Source API
 https://reqres.in

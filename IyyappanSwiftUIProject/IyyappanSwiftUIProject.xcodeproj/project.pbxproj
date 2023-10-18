@@ -44,6 +44,13 @@
 		ED4063C32ADD3FC800619F40 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063C22ADD3FC800619F40 /* NetworkMonitor.swift */; };
 		ED4063C62ADD56AE00619F40 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063C52ADD56AE00619F40 /* LoginResponse.swift */; };
 		ED4063C82ADD5A5400619F40 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063C72ADD5A5400619F40 /* RequestService.swift */; };
+		ED4063CA2ADFA14200619F40 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063C92ADFA14200619F40 /* EditProfileView.swift */; };
+		ED4063CD2ADFA8CD00619F40 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063CC2ADFA8CD00619F40 /* APIClient.swift */; };
+		ED4063CF2ADFAA1600619F40 /* EditProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063CE2ADFAA1600619F40 /* EditProfileResponse.swift */; };
+		ED4063D12ADFB16800619F40 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063D02ADFB16800619F40 /* EditProfileViewModel.swift */; };
+		ED4063D32ADFB41A00619F40 /* MainAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063D22ADFB41A00619F40 /* MainAppDataModel.swift */; };
+		ED4063D62ADFBB5D00619F40 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063D52ADFBB5D00619F40 /* WebView.swift */; };
+		ED4063D82ADFBC2D00619F40 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4063D72ADFBC2D00619F40 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +111,13 @@
 		ED4063C22ADD3FC800619F40 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		ED4063C52ADD56AE00619F40 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		ED4063C72ADD5A5400619F40 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		ED4063C92ADFA14200619F40 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		ED4063CC2ADFA8CD00619F40 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		ED4063CE2ADFAA1600619F40 /* EditProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileResponse.swift; sourceTree = "<group>"; };
+		ED4063D02ADFB16800619F40 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		ED4063D22ADFB41A00619F40 /* MainAppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppDataModel.swift; sourceTree = "<group>"; };
+		ED4063D52ADFBB5D00619F40 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		ED4063D72ADFBC2D00619F40 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +169,11 @@
 		ED3531972AD52A4A00465A31 /* IyyappanSwiftUIProject */ = {
 			isa = PBXGroup;
 			children = (
+				ED4063D42ADFBB4900619F40 /* UIKit */,
 				ED3531C72AD52BD900465A31 /* Data */,
 				ED3531C32AD52B9600465A31 /* Views */,
 				ED3531C22AD52B8400465A31 /* Models */,
+				ED4063CB2ADFA89700619F40 /* Networking */,
 				ED3531C42AD52BA000465A31 /* Extensions */,
 				ED3531CA2AD52DB200465A31 /* CustomControls */,
 				ED3531C52AD52BAE00465A31 /* Common */,
@@ -215,6 +231,7 @@
 				2EE4DFD02ADE740700BD7E6F /* HomeView.swift */,
 				2EE4DFD22ADE746300BD7E6F /* ProfileView.swift */,
 				2EA5362B2ADE9D0700EDDE6C /* UserDetailsView.swift */,
+				ED4063C92ADFA14200619F40 /* EditProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				2EE4DFD42ADE84DE00BD7E6F /* UserDataLoader.swift */,
+				ED4063D02ADFB16800619F40 /* EditProfileViewModel.swift */,
+				ED4063D22ADFB41A00619F40 /* MainAppDataModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -277,8 +296,26 @@
 				ED4063C52ADD56AE00619F40 /* LoginResponse.swift */,
 				2EE4DFCA2ADE681400BD7E6F /* UserListResponse.swift */,
 				2EA5362D2ADEA1AE00EDDE6C /* UserDetailsResponse.swift */,
+				ED4063CE2ADFAA1600619F40 /* EditProfileResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		ED4063CB2ADFA89700619F40 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ED4063CC2ADFA8CD00619F40 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		ED4063D42ADFBB4900619F40 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED4063D52ADFBB5D00619F40 /* WebView.swift */,
+				ED4063D72ADFBC2D00619F40 /* ImagePicker.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,10 +449,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4063D62ADFBB5D00619F40 /* WebView.swift in Sources */,
 				2EA536302ADEAFB800EDDE6C /* MenuItemView.swift in Sources */,
 				ED4063BB2ADD13DB00619F40 /* ImageLoader.swift in Sources */,
+				ED4063CA2ADFA14200619F40 /* EditProfileView.swift in Sources */,
 				2EE4DFD32ADE746300BD7E6F /* ProfileView.swift in Sources */,
 				ED3531D02AD5401500465A31 /* PasswordTextField.swift in Sources */,
+				ED4063CD2ADFA8CD00619F40 /* APIClient.swift in Sources */,
+				ED4063D82ADFBC2D00619F40 /* ImagePicker.swift in Sources */,
+				ED4063CF2ADFAA1600619F40 /* EditProfileResponse.swift in Sources */,
 				ED3531DE2AD5673D00465A31 /* Messages.swift in Sources */,
 				2EE4DFCF2ADE723300BD7E6F /* BottomTabView.swift in Sources */,
 				ED35319B2AD52A4A00465A31 /* ContentView.swift in Sources */,
@@ -426,6 +468,7 @@
 				ED3531CC2AD52DF000465A31 /* LoginView.swift in Sources */,
 				2EE4DFCD2ADE6B9100BD7E6F /* UserCardView.swift in Sources */,
 				2EE4DFC72ADE586100BD7E6F /* LoadingView.swift in Sources */,
+				ED4063D32ADFB41A00619F40 /* MainAppDataModel.swift in Sources */,
 				2EA5362C2ADE9D0700EDDE6C /* UserDetailsView.swift in Sources */,
 				ED4063C32ADD3FC800619F40 /* NetworkMonitor.swift in Sources */,
 				ED3531D42AD544E200465A31 /* CustomButton.swift in Sources */,
@@ -441,6 +484,7 @@
 				ED4063C12ADD3DA400619F40 /* ViewExtension.swift in Sources */,
 				2EA5362E2ADEA1AE00EDDE6C /* UserDetailsResponse.swift in Sources */,
 				ED3531DA2AD564F400465A31 /* MyFunctions.swift in Sources */,
+				ED4063D12ADFB16800619F40 /* EditProfileViewModel.swift in Sources */,
 				2EE4DFCB2ADE681400BD7E6F /* UserListResponse.swift in Sources */,
 				ED4063B92ADCFC8100619F40 /* ThreadingView.swift in Sources */,
 			);

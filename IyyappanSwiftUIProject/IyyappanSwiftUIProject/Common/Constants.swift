@@ -17,6 +17,8 @@ public class Images {
     static let LOCK = "lock"
     static let WELCOME_BG = "WelcomeBg"
     static let Logout = "arrow.down.left.square"
+    static let PencilCircle = "pencil.circle"
+    static let Spiderlogo = "Spiderlogo"
 }
 
 public class Dimens {

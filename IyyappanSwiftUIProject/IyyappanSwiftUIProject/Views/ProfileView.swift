@@ -35,6 +35,17 @@ struct ProfileView: View {
             }
             .padding()
             
+            // Edit Profile
+            NavigationLink {
+                EditProfileView()
+            } label: {
+                MenuItemView(
+                    title:Labels.Edit_Profile ,
+                    icon:Images.PencilCircle
+                )
+            }
+            Divider()
+            
             // Logout
             Button {
                 isLoggedIn = false
@@ -44,7 +55,7 @@ struct ProfileView: View {
                     icon:Images.Logout
                 )
             }
-            
+            Divider()
             
             Spacer()
         }
