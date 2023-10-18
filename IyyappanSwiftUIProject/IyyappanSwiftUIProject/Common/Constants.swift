@@ -16,11 +16,14 @@ public class Images {
     static let PHONE = "phone"
     static let LOCK = "lock"
     static let WELCOME_BG = "WelcomeBg"
+    static let Logout = "arrow.down.left.square"
 }
 
 public class Dimens {
     static let mediumImageHeight = CGFloat(300)
     static let mediumImageWidth = CGFloat(300)
+    static let profileImageHeight = CGFloat(150)
+    static let profileImageWidth = CGFloat(150)
     static let cornerRadius = CGFloat(10)
 }
 

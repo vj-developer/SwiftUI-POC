@@ -44,4 +44,6 @@ public class Labels {
     static let ForgotPassword = "Forgot Password ?"
     static let Next = "Next"
     static let Travel_Guides = "Travel Guides"
+    static let Logout = "Logout"
+    static let Submit = "Submit"
 }

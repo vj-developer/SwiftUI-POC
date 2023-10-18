@@ -83,7 +83,7 @@ struct RegisterView: View {
                         
                     }
                 } label: {
-                    CustomButton(title: "Submit")
+                    CustomButton(title: Labels.Submit)
                 }
                 
                 // Already a Member

@@ -14,21 +14,24 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
+            // Profile Image
             AsyncImage(url: URL(string: user.avatar)) { image in
                 image
                     .resizable()
-                    .frame(width:150,height: 150)
+                    .frame(width:Dimens.profileImageWidth,height: Dimens.profileImageHeight)
                     .clipShape(Circle())
             } placeholder: {
                 ProgressView()
-                    .frame(width:100,height: 100)
+                    .frame(width:Dimens.profileImageWidth,height: Dimens.profileImageHeight)
                     .tint(COLORS.PRIMARY)
             }
             
+            // Profile Details
             VStack {
                 Text(user.fullName)
                     .font(.title2)
-                Text("\(user.email)")
+                
+                Text(user.email)
             }
             .padding()
             
@@ -37,8 +40,8 @@ struct ProfileView: View {
                 isLoggedIn = false
             } label: {
                 MenuItemView(
-                    title:"Logout" ,
-                    icon:"arrow.down.left.square"
+                    title:Labels.Logout ,
+                    icon:Images.Logout
                 )
             }
             

@@ -17,26 +17,28 @@ struct UserDetailsView: View {
     var body: some View {
         
         VStack {
+            // Profile Image
             AsyncImage(url: URL(string: userDetails.data.avatar)) { image in
                 image
                     .resizable()
-                    .frame(width:150,height: 150)
+                    .frame(width:Dimens.profileImageWidth,height: Dimens.profileImageHeight)
                     .clipShape(Circle())
             } placeholder: {
                 ProgressView()
-                    .frame(width:100,height: 100)
+                    .frame(width:Dimens.profileImageWidth,height: Dimens.profileImageHeight)
                     .tint(COLORS.PRIMARY)
             }
             
+            // Profile Details
             VStack {
                 Text(userDetails.data.fullName)
                     .font(.title2)
-                Text("\(userDetails.data.email)")
+                Text(userDetails.data.email)
                 
-                Text("\(userDetails.support.text)")
+                Text(userDetails.support.text)
                     .padding()
                 
-                Text("\(userDetails.support.url)")
+                Text(userDetails.support.url)
             }
             .padding()
             
