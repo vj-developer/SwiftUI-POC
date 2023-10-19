@@ -25,6 +25,7 @@ public class Messages {
     static let PasswordMatchError = "Password does not match"
     static let InvalidMobileError = "Mobile Number must contain 10 digits"
     static let NetworkConnectionError = "No Internet Connection"
+    static let BiometricsNotEnrolledError = "Biomterics Not Enrolled in your Device"
 }
 
 public class Labels {
@@ -40,6 +41,9 @@ public class Labels {
     static let NEW_MEMBER = "New Member?"
     static let ALREADY_A_MEMBER = "Already a Member?"
     static let REGISTER = "Register"
+    static let PROCEED_WITH = "Proceed with"
+    static let OR = "Or"
+    static let BIOMTERIC = "Biometrics"
     static let LOGIN = "Login"
     static let ForgotPassword = "Forgot Password ?"
     static let Next = "Next"
